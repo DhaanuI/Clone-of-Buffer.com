@@ -102,8 +102,9 @@
             <input id="pass" type="password">
             <br>
             <button id="login">
-              <!-- <a style="text-decoration: none;" href="./account.html">Log In</a>   -->
-              Log In </button><br><br>
+                <!-- <a style="text-decoration: none;" href="./account.html">Log In</a>   -->
+                Log In
+            </button><br><br>
             <a style="text-decoration: none;" href="./signup.html">Create an account</a>
             <span style="word-spacing: 100px;">.
             </span> <a style="text-decoration: none;" href="">Forgot your password?</a>
@@ -143,7 +144,7 @@
 
 
     document.querySelector("#login").addEventListener("click", login);
-    
+
     function reset() {
         document.querySelector("#login").value = ""
         document.querySelector("#pass").value = ""
@@ -157,12 +158,12 @@
         data.forEach((element, index) => {
 
             if (loginemail == element.enteredemail && loginpassword == element.password) {
-                alert("Login Successful");
+                // alert("Login Successful");
                 location.replace("./account.html")
 
             }
             else {
-               setTimeout(function () {
+                setTimeout(function () {
                     document.querySelector("#login").textContent = "Invalid Credentials X Enter again"
                 }, 100);
 
@@ -173,7 +174,13 @@
             }
         })
 
-        
+
+    }
+
+    document.querySelector("#logo").addEventListener("click", redirect);
+
+    function redirect() {
+        location.replace("./index.html")
     }
 
     document.querySelector("#login").addEventListener("click", reset);
